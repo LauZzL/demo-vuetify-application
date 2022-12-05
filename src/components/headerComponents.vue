@@ -15,6 +15,9 @@
 </template>
 
 <script>
+
+const { ipcRenderer: ipc } = window.require("electron");
+
 export default {
   name: "headerComponents",
   data(){
@@ -25,7 +28,7 @@ export default {
           icon: 'mdi-minus',
           title: '最小化',
           click: function (){
-            alert('点击了最小化按钮')
+            ipc.send('window-min');
           },
           disabled: false,
           path: '',
@@ -35,7 +38,7 @@ export default {
           icon: 'mdi-checkbox-blank-outline',
           title: '最大化',
           click: function (){
-            alert('点击了最大化按钮')
+            ipc.send('window-max');
           },
           disabled: true,
           path: '',
@@ -45,7 +48,7 @@ export default {
           icon: 'mdi-close',
           title: '关闭',
           click: function (){
-            alert('点击了关闭按钮')
+            ipc.send('window-close');
           },
           disabled: false,
           path: '',
@@ -67,7 +70,7 @@ export default {
 .headerBar {
   -webkit-app-region: drag;
 }
-.headerBar v-btn {
+.headerBar .right-content {
   -webkit-app-region: no-drag;
   -webkit-user-select: none;
 }
