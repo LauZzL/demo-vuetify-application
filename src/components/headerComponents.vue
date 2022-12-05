@@ -67,7 +67,7 @@ export default {
 .headerBar {
   -webkit-app-region: drag;
 }
-.headerBar v-btn {
+.headerBar .right-content {
   -webkit-app-region: no-drag;
   -webkit-user-select: none;
 }
