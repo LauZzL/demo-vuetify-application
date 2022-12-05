@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 100%">
+  <div style="width: 100%" class="headerBar">
     <img slot="logo"
          width="136"
          class="logo"
@@ -63,5 +63,12 @@ export default {
 .right-content {
   float: right;
   margin-top: 10px;
+}
+.headerBar {
+  -webkit-app-region: drag;
+}
+.headerBar v-btn {
+  -webkit-app-region: no-drag;
+  -webkit-user-select: none;
 }
 </style>
