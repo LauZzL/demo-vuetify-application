@@ -10,6 +10,15 @@ import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
+import { _get , _post } from "./utils/request";
+
+//axios封装
+Vue.prototype.$request = {
+  get:_get,
+  post:_post
+}
+
+
 new Vue({
   router,
   store,
